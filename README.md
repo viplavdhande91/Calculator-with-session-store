@@ -41,3 +41,13 @@ make exec
 
 - [@Viplav Patil](https://www.linkedin.com/in/viplav-patil-a5789028/)
 
+
+## Feed back from @ruvi-d
+* project wasn't in a compiling state
+* remove every `using namespace`
+* provide design doc: class diagram / sequence diagram
+  * we can review code after reviewing the design
+* organize source files in to a src/ folder
+* unit tests
+* use clang-format to format files
+* clean up and sort includes
