@@ -1,3 +1,6 @@
+#ifndef MYEXCEPTION_H
+#define MYEXCEPTION_H
+
 #include <iostream>
 using namespace std;
 
@@ -10,3 +13,5 @@ public:
         return "Exception Occured: Number is out of range\n";
     }
 };
+
+#endif // MYEXCEPTION_H
