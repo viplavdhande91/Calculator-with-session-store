@@ -1,73 +1,40 @@
 # Calculator with Session Storing Feature 
 
+This Calculator system performs Arithmetic Operations and caches the session into database table.
 
+## Prerequisites
+* sqlite3
 
-## Installation
-
-  This Calculator system performs Arithmetic Operations and caches
-  the session into database table.
-  
-1)Navigate to build
-``` 
-cd build
+## Build instructions for Ubuntu 20.04 LTS
+### Setup
 ```
-
-
-2)Execute the Calculator Executable
+sudo apt install build-essential libsqlite3-dev
+```
+### Compiling
+``` 
+mkdir build && cd build
+cmake .. -DCMAKE_BUILD_TYPE=debug
+make exec
+```
+### Runing
 ``` 
 ./exec
 ```
 
-
-
+### Test with
+* gcc 11
+* cmake 3.0.0
+* Sqlite3 3.31.1
 
     
 ## API Reference
 
-#### Database Table Structure
+### Database Table Structure
 
 
 | NUMBER1 | NUMBER2     | OPERATION_PERFORMED   | RESULT |
 | :-------- | :------- | :--------------------- |:------ |
 |         |            |                        |        |
-
-
-
-
-
-## Third Party Libraries
-
-
-1)Used [libsqlite3-dev](https://packages.ubuntu.com/bionic-updates/libsqlite3-dev)
-[SQLite 3 development files] , [sqlite3](https://www.sqlite.org/docs.html)
-``` 
-sudo apt-get install sqlite3 libsqlite3-dev
-```
-
-
-
-## Versions
-
-1)C++
-``` 
- version: 11
-```
-2)cmake
-``` 
- version: 3.0.0
-
-```
-3)Sqlite3
-
-```
-version: 3.31.1
-```
-
-
-## License
-
-[MIT](https://choosealicense.com/licenses/mit/) 
-Licensed under Distribution Category
 
 
 ## Authors
