@@ -51,3 +51,4 @@ make exec
 * unit tests
 * use clang-format to format files
 * clean up and sort includes
+* your commit messages should be in "imperative mood"
