@@ -10,3 +10,4 @@ CTestTestfile.cmake
 _deps
 exec
 calculatorSessionDb.db
+build/
