@@ -4,6 +4,3 @@ find_package (SQLite3)
 add_executable(exec driver.cpp)
 target_link_libraries(exec LINK_PUBLIC sqlite3)
 
-
-
-
