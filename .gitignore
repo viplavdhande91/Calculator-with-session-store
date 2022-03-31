@@ -13,4 +13,4 @@ _deps
 # Ignore project related database and executable files
 exec
 calculatorSessionDb.db
-
+build
