@@ -1,3 +1,4 @@
+# Ignore cmake generated directories and files.
 CMakeLists.txt.user
 CMakeCache.txt
 CMakeFiles
@@ -8,6 +9,8 @@ install_manifest.txt
 compile_commands.json
 CTestTestfile.cmake
 _deps
+
+# Ignore project related database and executable files
 exec
 calculatorSessionDb.db
 
