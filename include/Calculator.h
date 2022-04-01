@@ -3,9 +3,9 @@
 
 #ifndef CALCULATOR_H
 #define CALCULATOR_H
-using std::endl;
 using std::cout;
-#include<climits>
+using std::endl;
+#include <climits>
 #include "MyException.h"
 using std::runtime_error;
 
@@ -17,7 +17,7 @@ public:
     {
     }
 
-    template <class T1 = double,class T2>
+    template <class T1 = double, class T2>
     static void numberRangeCheck(T1 x, T2 y)
     {
         if ((x < INT_MIN) || (x > INT_MAX) || (y < INT_MIN) || (y > INT_MAX))
@@ -28,8 +28,7 @@ public:
     }
 
 public:
-
-    //ADDITION
+    // ADDITION
     template <class T1 = double, class T2>
     auto add(T1 i, T2 j) -> decltype(i + j)
     {
@@ -46,8 +45,7 @@ public:
         return i + j;
     }
 
-
-    //SUBTRACTION
+    // SUBTRACTION
     template <class T1 = double, class T2>
     auto subtract(T1 i, T2 j) -> decltype(i - j)
 
@@ -65,9 +63,7 @@ public:
         return i - j;
     }
 
-
-
-    //MULTIPLICATION
+    // MULTIPLICATION
     template <class T1 = double, class T2>
     auto multiply(T1 i, T2 j) -> decltype(i * j)
 
@@ -85,7 +81,7 @@ public:
         return i * j;
     }
 
-    //DIVISION
+    // DIVISION
     template <class T1 = double, class T2>
     auto divide(T1 i, T2 j) -> decltype(i / j)
 
@@ -113,6 +109,5 @@ public:
         return i / j;
     }
 };
-
 
 #endif
