@@ -134,3 +134,12 @@ Licensed under Distribution Category
 
 - [@Viplav Patil](https://www.linkedin.com/in/viplav-patil-a5789028/)
 
+## Review comments
+* You are supposed to merge my review PR
+* Commit messages are still not in "imperative mood"
+* Still not using the project template I shared
+* You should be compiling with extra warnings
+* Give a meaningful name to the executable
+* missing clang format 
+* Test files should be next to the files under test
+* driver cpp need to be split to 1) DB access logic 2) CLI parsing logic 3) calculations and then tested separately 

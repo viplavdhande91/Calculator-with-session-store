@@ -2,6 +2,8 @@
 #include "../../../include/Calculator.h"
 using std::cout;
 using std::endl;
+
+// TODO: not enough testing coverage. Following the ZOMBIES acronym when writing tests: https://www.agilealliance.org/resources/sessions/test-driven-development-guided-by-zombies/
 TEST(CalculatorTests, adddition)
 {
      Calculator obj;

@@ -1,21 +1,23 @@
 #include <iostream>
-using namespace std;
-#include "../include/MyException.h"
+using namespace std;  // TODO: using namespace std;
+// TODO: These relative include paths are a codesmell. We typically have the headers alongside the CPPs 
+#include "../include/MyException.h" 
 #include <climits>
-#include <stdexcept> // To use runtime_error
+#include <stdexcept> 
 #include "../include/Calculator.h"
 #include "../include/sqlDemo.h"
-#include "../sqlite3.h"
+#include "../sqlite3.h"  // TODO: this should be <sqlite3.h> right? as in a system header.
 
 
 /*QUERY MAKEIER HELPER FUNCTION */
+// TODO: replace 'const char *' with std::stringview or std::string
 void queryDoer(int choice, double number1, double number2, double result, const char *dir)
 {
     string sql;
 
     if (choice == 1) //FOR +
     {
-
+        // TODO: use String stream or FMT lib for these String constructions
         sql = "INSERT INTO SESSION_TABLE(NUMBER1, NUMBER2, OPERATION_PERFORMED, RESULT) VALUES(" +
               to_string(number1) + ',' +
               to_string(number2) + ',' + "'ADD'" + ',' +
@@ -95,7 +97,7 @@ int main(void)
             cout << "Invalid choice" << endl;
         }
     }
-    Calculator obj;
+    Calculator obj; // TODO: no need to create an object to call static functions
     auto result = 0.0;
     const char *dir = R"(calculatorSessionDb.db)";
      createDB(dir);
