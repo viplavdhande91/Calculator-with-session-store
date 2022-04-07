@@ -1,57 +1,55 @@
 #include <iostream>
-using namespace std;
-#include "../include/MyException.h"
-#include <climits>
+#include "MyException.h"
+#include <limits>
 #include <stdexcept> // To use runtime_error
-#include "../include/Calculator.h"
-#include "../include/sqlDemo.h"
-#include "../sqlite3.h"
-
+#include "Calculator.h"
+#include "sqlDemo.h"
+#include <sqlite3.h>
 
 /*QUERY MAKEIER HELPER FUNCTION */
 void queryDoer(int choice, double number1, double number2, double result, const char *dir)
 {
-    string sql;
+    std::string sql;
 
-    if (choice == 1) //FOR +
+    if (choice == 1) // FOR +
     {
 
         sql = "INSERT INTO SESSION_TABLE(NUMBER1, NUMBER2, OPERATION_PERFORMED, RESULT) VALUES(" +
-              to_string(number1) + ',' +
-              to_string(number2) + ',' + "'ADD'" + ',' +
-              to_string(result) + "); ";
+              std::to_string(number1) + ',' +
+              std::to_string(number2) + ',' + "'ADD'" + ',' +
+              std::to_string(result) + "); ";
     }
     else if (choice == 2) //-
     {
         sql = "INSERT INTO SESSION_TABLE(NUMBER1, NUMBER2, OPERATION_PERFORMED, RESULT) VALUES(" +
-              to_string(number1) + ',' +
-              to_string(number2) + ',' + "'SUBTR'" + ',' +
-              to_string(result) + "); ";
+              std::to_string(number1) + ',' +
+              std::to_string(number2) + ',' + "'SUBTR'" + ',' +
+              std::to_string(result) + "); ";
     }
-    else if (choice == 3)//*
+    else if (choice == 3) //*
     {
         sql = "INSERT INTO SESSION_TABLE(NUMBER1, NUMBER2, OPERATION_PERFORMED, RESULT) VALUES(" +
-              to_string(number1) + ',' +
-              to_string(number2) + ',' + "'MUL'" + ',' +
-              to_string(result) + "); ";
+              std::to_string(number1) + ',' +
+              std::to_string(number2) + ',' + "'MUL'" + ',' +
+              std::to_string(result) + "); ";
     }
-    else if (choice == 4) //DIV
+    else if (choice == 4) // DIV
     {
         sql = "INSERT INTO SESSION_TABLE(NUMBER1, NUMBER2, OPERATION_PERFORMED, RESULT) VALUES(" +
-              to_string(number1) + ',' +
-              to_string(number2) + ',' + "'DIV'" + ',' +
-              to_string(result) + "); ";
+              std::to_string(number1) + ',' +
+              std::to_string(number2) + ',' + "'DIV'" + ',' +
+              std::to_string(result) + "); ";
     }
 
-    if (choice == 5) //SELECT WHOLE DATA
+    if (choice == 5) // SELECT WHOLE DATA
     {
-        selectData(dir);
+        sqlDemo::selectData(dir);
     }
     else
     {
-        insertData(dir, sql); //INSERTDATA
+        sqlDemo::insertData(dir, sql); // INSERTDATA
 
-        cout << "Result is: " << result << endl;
+        std::cout << "Result is: " << result << std::endl;
     }
 }
 
@@ -59,13 +57,13 @@ int main(void)
 {
     int choice = 0;
 
-    cout << "************CALCULATOR*****************" << endl;
+    std::cout << "************CALCULATOR*****************" << std::endl;
 
-    cout << "Addition: Enter 1" << endl;
-    cout << "Subtraction: Enter 2" << endl;
-    cout << "Multiplication: Enter 3" << endl;
-    cout << "Division: Enter 4" << endl;
-    cout << "Check Database: Enter 5" << endl;
+    std::cout << "Addition: Enter 1" << std::endl;
+    std::cout << "Subtraction: Enter 2" << std::endl;
+    std::cout << "Multiplication: Enter 3" << std::endl;
+    std::cout << "Division: Enter 4" << std::endl;
+    std::cout << "Check Database: Enter 5" << std::endl;
 
     bool loopRun = true;
     double number1 = 1;
@@ -73,16 +71,16 @@ int main(void)
 
     while (loopRun)
     {
-        cout << "Enter the Choice: " << endl;
-        cin >> choice;
+        std::cout << "Enter the Choice: " << std::endl;
+        std::cin >> choice;
 
         if (choice > 0 && choice < 5)
         {
-            cout << "Enter First Number: " << endl;
-            cin >> number1;
+            std::cout << "Enter First Number: " << std::endl;
+            std::cin >> number1;
 
-            cout << "Enter Second Number: " << endl;
-            cin >> number2;
+            std::cout << "Enter Second Number: " << std::endl;
+            std::cin >> number2;
 
             loopRun = false;
         }
@@ -92,16 +90,16 @@ int main(void)
         }
         else
         {
-            cout << "Invalid choice" << endl;
+            std::cout << "Invalid choice" << std::endl;
         }
     }
-    Calculator obj;
+    Calculator obj{};
     auto result = 0.0;
     const char *dir = R"(calculatorSessionDb.db)";
-     createDB(dir);
-     createTable(dir);
+    sqlDemo::createDB(dir);
+    sqlDemo::createTable(dir);
     // deleteData(dir);
-    string sql = "";
+    std::string sql = "";
 
     switch (choice)
     {
