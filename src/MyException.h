@@ -7,13 +7,10 @@ using std::exception;
 class MyException : public exception
 {
 public:
-    const char* what() const throw()
+    const char *what() const throw()
     {
         return "Exception Occured\n";
     }
-
-
-   
 };
 
 #endif

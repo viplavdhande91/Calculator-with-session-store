@@ -14,6 +14,10 @@ _deps
 exec
 calculatorSessionDb.db
 build/
+
+# Ignore SQL libraries API
 sqlite3.c 
 sqlite3.h
+
+
 

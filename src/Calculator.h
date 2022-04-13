@@ -12,7 +12,7 @@ public:
     template <typename T1 = double, typename T2 = double>
     void numberRangeCheck(T1 x, T2 y)
     {
-        if ((x < std::numeric_limits<double>::max()) || (x > std::numeric_limits<double>::lowest()) || (y < std::numeric_limits<double>::max()) || (y > std::numeric_limits<double>::lowest()))
+        if ((x > std::numeric_limits<double>::max()) || (x < std::numeric_limits<double>::lowest()) || (y > std::numeric_limits<double>::max()) || (y < std::numeric_limits<double>::lowest()))
         {
             MyException e;
             throw e;
@@ -23,13 +23,14 @@ public:
     template <typename T1 = double, typename T2 = double>
     int overflowcheck(T1 x, T2 y)
     {
-        if (x > 0 && y > std::numeric_limits<double>::max() - x)
+        
+        if (x+y > std::numeric_limits<double>::max() || x*y > std::numeric_limits<double>::max() )
         {
             /* handle overflow */
             MyException e;
             throw e;
         }
-        else if (x < 0 && y < std::numeric_limits<double>::lowest() - y)
+        else if ( x+y < std::numeric_limits<double>::lowest() || x*y < std::numeric_limits<double>::lowest())
         {
             /* handle underflow */
             MyException e;
@@ -101,7 +102,6 @@ public:
         try
         {
             numberRangeCheck(i, j);
-            overflowcheck(i, j);
 
             if (j == 0)
             {

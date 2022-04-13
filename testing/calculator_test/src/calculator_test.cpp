@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "../../../include/Calculator.h"
+#include "../../../src/Calculator.h"
 using std::cout;
 using std::endl;
 TEST(CalculatorTests, adddition)
@@ -10,7 +10,9 @@ TEST(CalculatorTests, adddition)
 
      EXPECT_NE(3, obj.add(0, 1));
 
-     cout << "TEST CASE FINISHED" << endl<< endl<< endl;
+     cout << "TEST CASE FINISHED" << endl
+          << endl
+          << endl;
 }
 
 TEST(CalculatorTests, multiply)
@@ -19,7 +21,8 @@ TEST(CalculatorTests, multiply)
      EXPECT_EQ(200, obj.multiply(20, 10));
      EXPECT_NE(3, obj.multiply(0, 13333));
      cout << "TEST CASE FINISHED" << endl
-          << endl<< endl;
+          << endl
+          << endl;
 }
 
 TEST(test_calculations, division)
@@ -28,7 +31,8 @@ TEST(test_calculations, division)
      EXPECT_EQ(10, obj.divide(20, 10));
      EXPECT_NE(3, obj.divide(0, 13333));
      cout << "TEST CASE FINISHED" << endl
-          << endl<< endl;
+          << endl
+          << endl;
 }
 TEST(test_calculations, substraction)
 {
@@ -36,5 +40,6 @@ TEST(test_calculations, substraction)
      EXPECT_EQ(10, obj.subtract(20, 10));
      EXPECT_NE(3, obj.subtract(0, 13333));
      cout << "TEST CASE FINISHED" << endl
-          << endl<< endl;
+          << endl
+          << endl;
 }
